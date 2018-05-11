@@ -62,6 +62,5 @@ namespace QLTV.BUS
             return role.getIDbyRoleName(roleName).RoleId;
         }
 
-
     }
 }

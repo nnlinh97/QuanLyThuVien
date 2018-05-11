@@ -63,5 +63,14 @@ namespace QLTV
             txtTenRole.Text = grvRole.CurrentRow.Cells[1].Value.ToString();
             txtMoTa.Text = grvRole.CurrentRow.Cells[2].Value.ToString();
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            RoleBUS roleBus = new RoleBUS();
+            RoleNV roleNV = roleBus.getRole(txtRoleID.Text);
+            txtRoleID.Text = roleNV.RoleId;
+            txtTenRole.Text = roleNV.RoleName;
+            txtMoTa.Text = roleNV.Description;
+        }
     }
 }

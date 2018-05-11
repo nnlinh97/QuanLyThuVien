@@ -44,6 +44,7 @@ namespace QLTV.DAO
             }
             return role;
         }
+
         public int addData(RoleNV role)
         {
             string sql = "insert into RoleNV values('" + role.RoleId + "',N'" + role.RoleName + "',N'" + role.Description + "')";
@@ -62,6 +63,8 @@ namespace QLTV.DAO
             string sql = "select ID from RoleNV where ID ='" + id + "'";
             return data.checkID(sql);
         }
+
+       
        
 
     }

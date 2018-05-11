@@ -58,6 +58,7 @@ namespace QLTV
             grvNV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             disnable();
+            
         }
        
         private void btnThoat_Click(object sender, EventArgs e)
@@ -130,6 +131,33 @@ namespace QLTV
             RoleBUS role = new RoleBUS();
             cbbVaiTro.DataSource = role.Getlist();
             cbbVaiTro.DisplayMember = "roleName";
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            nvBUS nvB = new nvBUS();
+            showNV sNV = nvB.displayFrmNV(txtMaNV.Text);
+            if(txtMaNV.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã nhân viên!");
+            }
+            else if (sNV == null)
+            {
+                MessageBox.Show("Mã nhân viên không tồn tại!");
+            }
+            else
+            {
+                txtMaNV.Text = sNV.Id;
+                txtUser.Text = sNV.Username;
+                txtPass.Text = sNV.Password;
+                txtTenNV.Text = sNV.Fullname;
+                txtCMND.Text = sNV.Cmnd;
+                txtNgaySinh.Text = sNV.Dateofbirth;
+                txtDiaChi.Text = sNV.Diachi;
+                txtEmail.Text = sNV.Email;
+                txtCaLamViec.Text = sNV.Calamviec;
+                cbbVaiTro.Text = sNV.RoleName;
+            }
         }
     }
 }

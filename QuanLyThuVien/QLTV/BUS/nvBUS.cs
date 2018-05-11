@@ -34,7 +34,15 @@ namespace QLTV.BUS
                 return 1;
             return 0;
         }
+         public showNV displayFrmNV(string id)
+        {
+            return nv.displayFrmNV(id);
+        }
 
+        public Account login(string username, string password)
+        {
+            return nv.login(username, password);
+        }
 
     }
 }

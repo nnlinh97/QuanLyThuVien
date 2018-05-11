@@ -59,13 +59,13 @@
             this.txtCaLamViec = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbVaiTro = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.cbbVaiTro = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grvNV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -118,6 +118,7 @@
             this.btnTim.TabIndex = 1;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // panel10
             // 
@@ -353,6 +354,14 @@
             this.panel1.Size = new System.Drawing.Size(420, 32);
             this.panel1.TabIndex = 0;
             // 
+            // cbbVaiTro
+            // 
+            this.cbbVaiTro.FormattingEnabled = true;
+            this.cbbVaiTro.Location = new System.Drawing.Point(125, 4);
+            this.cbbVaiTro.Name = "cbbVaiTro";
+            this.cbbVaiTro.Size = new System.Drawing.Size(281, 24);
+            this.cbbVaiTro.TabIndex = 1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -425,14 +434,6 @@
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // cbbVaiTro
-            // 
-            this.cbbVaiTro.FormattingEnabled = true;
-            this.cbbVaiTro.Location = new System.Drawing.Point(125, 4);
-            this.cbbVaiTro.Name = "cbbVaiTro";
-            this.cbbVaiTro.Size = new System.Drawing.Size(281, 24);
-            this.cbbVaiTro.TabIndex = 1;
             // 
             // frmNV
             // 

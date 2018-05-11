@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,10 @@ namespace QLTV
         public frmDashboard()
         {
             InitializeComponent();
+            if (Form1.isAdmin == false)
+            {
+                QLNVTool.Enabled = false ;
+            }
         }
 
         private void logoutTool_Click(object sender, EventArgs e)
@@ -61,19 +67,40 @@ namespace QLTV
         private void roleTool_Click(object sender, EventArgs e)
         {
             frmRoleNV f = new frmRoleNV();
-            f.ShowDialog();
+            if (!Form1.isAdmin)
+            {
+                f.Enabled = false;
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!!!");
+            }
+            else
+            {
+                f.ShowDialog();
+            }
         }
 
         private void DSNVTool_Click(object sender, EventArgs e)
         {
             frmNV f = new frmNV();
-            f.ShowDialog();
+            if (!Form1.isAdmin)
+            {
+                f.Enabled = false;
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!!!");
+            }
+            else
+            {
+                f.ShowDialog();
+            }
         }
 
         private void QLBDTool_Click(object sender, EventArgs e)
         {
             frmBanDoc f = new frmBanDoc();
             f.ShowDialog();
+        }
+
+        private void QLNVTool_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

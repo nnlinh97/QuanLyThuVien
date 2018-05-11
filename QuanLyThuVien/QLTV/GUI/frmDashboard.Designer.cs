@@ -39,11 +39,11 @@
             this.DSNVTool = new System.Windows.Forms.ToolStripMenuItem();
             this.QLBDTool = new System.Windows.Forms.ToolStripMenuItem();
             this.QLSachTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.MuonSachTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.TraSachTool = new System.Windows.Forms.ToolStripMenuItem();
             this.SachTool = new System.Windows.Forms.ToolStripMenuItem();
             this.LoaiSachTool = new System.Windows.Forms.ToolStripMenuItem();
             this.NXBTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.MuonSachTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.TraSachTool = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -97,6 +97,7 @@
             this.QLNVTool.Name = "QLNVTool";
             this.QLNVTool.Size = new System.Drawing.Size(145, 24);
             this.QLNVTool.Text = "Quản Lý Nhân Viên";
+            this.QLNVTool.Click += new System.EventHandler(this.QLNVTool_Click);
             // 
             // roleTool
             // 
@@ -129,20 +130,6 @@
             this.QLSachTool.Size = new System.Drawing.Size(108, 24);
             this.QLSachTool.Text = "Quản Lý Sách";
             // 
-            // MuonSachTool
-            // 
-            this.MuonSachTool.Name = "MuonSachTool";
-            this.MuonSachTool.Size = new System.Drawing.Size(95, 24);
-            this.MuonSachTool.Text = "Mượn Sách";
-            this.MuonSachTool.Click += new System.EventHandler(this.MuonSachTool_Click);
-            // 
-            // TraSachTool
-            // 
-            this.TraSachTool.Name = "TraSachTool";
-            this.TraSachTool.Size = new System.Drawing.Size(76, 24);
-            this.TraSachTool.Text = "Trả Sách";
-            this.TraSachTool.Click += new System.EventHandler(this.TraSachTool_Click);
-            // 
             // SachTool
             // 
             this.SachTool.Name = "SachTool";
@@ -163,6 +150,20 @@
             this.NXBTool.Size = new System.Drawing.Size(174, 26);
             this.NXBTool.Text = "Nhà Xuất Bản";
             this.NXBTool.Click += new System.EventHandler(this.NXBTool_Click);
+            // 
+            // MuonSachTool
+            // 
+            this.MuonSachTool.Name = "MuonSachTool";
+            this.MuonSachTool.Size = new System.Drawing.Size(95, 24);
+            this.MuonSachTool.Text = "Mượn Sách";
+            this.MuonSachTool.Click += new System.EventHandler(this.MuonSachTool_Click);
+            // 
+            // TraSachTool
+            // 
+            this.TraSachTool.Name = "TraSachTool";
+            this.TraSachTool.Size = new System.Drawing.Size(76, 24);
+            this.TraSachTool.Text = "Trả Sách";
+            this.TraSachTool.Click += new System.EventHandler(this.TraSachTool_Click);
             // 
             // label1
             // 

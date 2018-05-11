@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QLTV.BUS;
+using QLTV.DAO;
+using QLTV.DTO;
 namespace QLTV
 {
     public partial class Form1 : Form
     {
+        public static bool isAdmin = true;
         public Form1()
         {
             InitializeComponent();
@@ -20,9 +23,24 @@ namespace QLTV
         private void btnlogin_Click(object sender, EventArgs e)
         {
             frmDashboard f = new frmDashboard();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            nvBUS nvB = new nvBUS();
+            Account acc = nvB.login(txtUser.Text, txtPass.Text);
+            
+            if(acc == null)
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!!!");
+            }
+            else
+            {
+                if (acc.Id == "ad")
+                {
+                    isAdmin = true;
+                }
+                else isAdmin = false;
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)

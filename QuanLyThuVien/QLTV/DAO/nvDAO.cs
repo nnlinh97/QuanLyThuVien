@@ -32,5 +32,30 @@ namespace QLTV.DAO
             return 0;
         }
 
+        public showNV displayFrmNV(string id)
+        {
+            showNV sNV = null;
+            string sql = "select nv.RoleID, role.roleName,nv.ID,nv.Username,nv.Password, nv.FullName,nv.CMND, nv.DataOfBirth, nv.Address, nv.Email, nv.CaLamViec from RoleNV role, NhanVien nv where role.ID = nv.RoleID and nv.ID = '" + id + "'";
+            DataTable table = data.getData(sql);
+            foreach (DataRow item in table.Rows)
+            {
+                sNV = new showNV(item);
+                return sNV;
+            }
+            return sNV;
+        }
+
+        public Account login(string username, string password)
+        {
+            Account acc = null;
+            string sql = "select nv.RoleID,nv.Username,nv.Password from RoleNV role, NhanVien nv where role.ID = nv.RoleID and nv.Username = '" + username + "' and nv.Password = '" + password + "'";
+            DataTable table = data.getData(sql);
+            foreach (DataRow item in table.Rows)
+            {
+                acc = new Account(item);
+                return acc;
+            }
+            return acc;
+        }
     }
 }
